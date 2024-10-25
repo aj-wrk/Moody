@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Moody Playlist by Spotify</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+
+    <body class="text-light">
+
+        <nav class="navbar navbar-dark px-4">
+            <a class="navbar-brand" href="#">Moody Playlist by Spotify</a>
+            <a class="nav-link text-light" href="#" id="login-btn">Login with Spotify</a>
+        </nav>
+
+        <main>
+            <div class="container d-flex flex-column justify-content-center align-items-center vh-100 text-center">
+                <h1 class="display-1 fw-light">Moody Playlist</h1>
+                <button class="btn btn-light btn-lg rounded-pill my-3 px-5" onclick="location.href='mood-selection.html'">Create Playlist</button>
+                <button class="btn btn-outline-light rounded-pill my-2 px-5" id="randomize-btn">
+                    <i class="fas fa-random"></i> Randomize
+                </button>
+            </div>
+        </main>
+    </body>
+
+    <script src="app.js"></script>
+</html>
+

@@ -1,0 +1,138 @@
+body {
+    background-color: #121212;
+    color: white;
+    font-family: 'Noto', sans-serif;
+}
+
+.mood-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.mood-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    text-align: center;
+    color: black;
+    cursor: pointer;
+}
+
+.mood-selection {
+    background-color: #121212;
+}
+
+/* Colors for the red moods*/
+.mood-enraged { background-color: #FF5959; }
+.mood-panicked { background-color: #FF5959; }
+.mood-stressed { background-color: #FF5959; }
+.mood-jittery { background-color: #FF5959; }
+.mood-shocked { background-color: #FF5959; }
+.mood-livid { background-color: #FF5959; }
+.mood-furious { background-color: #FF5959; }
+.mood-frustrated { background-color: #FF5959; }
+.mood-tense { background-color: #FF5959; }
+.mood-stunned { background-color: #FF5959; }
+.mood-fuming { background-color: #FF5959; }
+.mood-frightened { background-color: #FF5959; }
+.mood-angry { background-color: #FF5959; }
+.mood-nervous { background-color: #FF5959; }
+.mood-restless { background-color: #FF5959; }
+.mood-anxious { background-color: #FF5959; }
+.mood-apprehensive { background-color: #FF5959; }
+.mood-worried { background-color: #FF5959; }
+.mood-irritated { background-color: #FF5959; }
+.mood-annoyed { background-color: #FF5959; }
+.mood-repulsed { background-color: #FF5959; }
+.mood-troubled { background-color: #FF5959; }
+.mood-concerned { background-color: #FF5959; }
+.mood-uneasy { background-color: #FF5959; }
+.mood-peeved { background-color: #FF5959; }
+
+/* Example for yellow moods */
+.mood-surprised { background-color: #FFEB3B; }
+.mood-cheerful { background-color: #FFEB3B; }
+.mood-upbeat { background-color: #FFEB3B; }
+.mood-festive { background-color: #FFEB3B; }
+.mood-exhilarated { background-color: #FFEB3B; }
+.mood-ecstatic { background-color: #FFEB3B; }
+.mood-hyper { background-color: #FFEB3B; }
+.mood-motivated { background-color: #FFEB3B; }
+.mood-inspired { background-color: #FFEB3B; }
+.mood-elated { background-color: #FFEB3B; }
+.mood-energized { background-color: #FFEB3B; }
+.mood-lively { background-color: #FFEB3B; }
+.mood-giddy { background-color: #FFEB3B; }
+.mood-optimistic { background-color: #FFEB3B; }
+.mood-enthusiastic { background-color: #FFEB3B; }
+.mood-pleased { background-color: #FFEB3B; }
+.mood-focused { background-color: #FFEB3B; }
+.mood-happy { background-color: #FFEB3B; }
+.mood-proud { background-color: #FFEB3B; }
+.mood-thrilled { background-color: #FFEB3B; }
+.mood-pleasant { background-color: #FFEB3B; }
+.mood-joyful { background-color: #FFEB3B; }
+.mood-hopeful { background-color: #FFEB3B; }
+.mood-playful { background-color: #FFEB3B; }
+.mood-blissful { background-color: #FFEB3B; }
+
+/* Example for blue moods */
+.mood-ease { background-color: lightgreen; }
+.mood-easygoing { background-color: lightgreen; }
+.mood-content { background-color: lightgreen; }
+.mood-loving { background-color: lightgreen; }
+.mood-fulfilled { background-color: lightgreen; }
+.mood-calm { background-color: lightgreen; }
+.mood-secure { background-color: lightgreen; }
+.mood-satisfied { background-color: lightgreen; }
+.mood-grateful { background-color: lightgreen; }
+.mood-touched { background-color: lightgreen; }
+.mood-relaxed { background-color: lightgreen; }
+.mood-chill { background-color: lightgreen; }
+.mood-restful { background-color: lightgreen; }
+.mood-blessed { background-color: lightgreen; }
+.mood-excited { background-color: lightgreen; }
+.mood-mellow { background-color: lightgreen; }
+.mood-thoughtful { background-color: lightgreen; }
+.mood-peaceful { background-color: lightgreen; }
+.mood-comfortable { background-color: lightgreen; }
+.mood-carefree { background-color: lightgreen }
+.mood-sleepy { background-color: lightgreen; }
+.mood-complacent { background-color: lightgreen; }
+.mood-tranquil { background-color: lightgreen; }
+.mood-cozy { background-color: lightgreen; }
+.mood-serene { background-color: lightgreen; }
+
+
+/* Example for green moods */
+.mood-disgusted { background-color: royalblue; }
+.mood-glum { background-color: royalblue; }
+.mood-disappointed { background-color: royalblue; }
+.mood-down { background-color: royalblue; }
+.mood-apathetic { background-color: royalblue; }
+.mood-pessimistic { background-color: royalblue; }
+.mood-morose { background-color: royalblue; }
+.mood-discouraged { background-color: royalblue; }
+.mood-sad { background-color: royalblue; }
+.mood-bored { background-color: royalblue; }
+.mood-alienated { background-color: royalblue; }
+.mood-miserable { background-color: royalblue; }
+.mood-lonely { background-color: royalblue; }
+.mood-disheartened { background-color: royalblue; }
+.mood-tired { background-color: royalblue; }
+.mood-despondent { background-color: royalblue; }
+.mood-depressed { background-color: royalblue; }
+.mood-sullen { background-color: royalblue; }
+.mood-exhausted { background-color: royalblue; }
+.mood-fatigued { background-color: royalblue; }
+.mood-despair { background-color: royalblue; }
+.mood-hopeless { background-color: royalblue; }
+.mood-desolated { background-color: royalblue; }
+.mood-spent { background-color: royalblue; }
+.mood-drained { background-color: royalblue; }
