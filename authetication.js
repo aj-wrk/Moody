@@ -1,6 +1,6 @@
 // Spotify Application Credentials
 const client_id = '5ce6c394f74f4c7bb2bcffef6bff236a';
-const redirect_uri = 'https://aj-wrk.github.io/Moody/steps'; // Set to match your environment
+const redirect_uri = 'https://aj-wrk.github.io/Moody/steps.html'; // Set to match your environment
 
 // Redirects to Spotify's authorization URL
 document.getElementById('login-btn').onclick = function() {
