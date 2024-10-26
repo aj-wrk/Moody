@@ -2,32 +2,33 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Moody Playlist by Spotify</title>
+        <meta name="viewport" content="width=device-width">
+        <title>Moody by SpotifyUA</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="styles.css">
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="img/" type="image/x-icon">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     </head>
 
-    <body class="text-light">
+    <body class="text-light bg-homepage">
 
-        <nav class="navbar navbar-dark px-4">
-            <a class="navbar-brand" href="#">Moody Playlist by Spotify</a>
-            <a class="nav-link text-light" href="#" id="login-btn">Login with Spotify aquiiii</a>
-        </nav>
+        <header class="fixed-top">
+            <nav class="navbar navbar-dark pl-4 pr-5 pt-4">
+                <a class="navbar-brand" href="#"><img src="img/Logos.png" height="50" width="270" alt="logo"/></a>
+                <a> MCTW || TDW </a>
+            </nav>
+        </header>
 
         <main>
-            <div class="container d-flex flex-column justify-content-center align-items-center vh-100 text-center">
-                <h1 class="display-1 fw-light">Moody Playlist</h1>
-                <button class="btn btn-light btn-lg rounded-pill my-3 px-5" onclick="location.href='mood-selection.html'">Create Playlist</button>
-                <button class="btn btn-outline-light rounded-pill my-2 px-5" id="randomize-btn">
-                    <i class="fas fa-random"></i> Randomize
-                </button>
+            <div class="d-flex flex-column justify-content-center align-items-center vh-100">
+                <h2 class="display-4 text-white">Welcome to</h2>
+                <h1 class="moody-text">Moody</h1>
+                <button class="btn btn-light btn-lg rounded-pill mt-2" id="login-btn">Connect with Spotify</button>
             </div>
         </main>
+
     </body>
 
-    <script src="app.js"></script>
+    <script src="authetication.js"></script>
 </html>
 
