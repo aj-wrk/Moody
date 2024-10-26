@@ -4,6 +4,19 @@ body {
     font-family: 'Noto', sans-serif;
 }
 
+.bg-homepage {
+    background-image: url("img/Screenshot 2024-10-26 162643.png");
+}
+
+
+.moody-text {
+    font-size: 8rem; /* Adjust size as per your preference */
+    font-weight: 700; /* Makes it bold */
+    line-height: 1.2; /* Adjust line spacing if needed */
+    display: block; /* Ensure it's displayed as a block to manage spacing */
+}
+
+
 .mood-grid {
     display: flex;
     flex-wrap: wrap;
@@ -22,10 +35,6 @@ body {
     text-align: center;
     color: black;
     cursor: pointer;
-}
-
-.mood-selection {
-    background-color: #121212;
 }
 
 /* Colors for the red moods*/
