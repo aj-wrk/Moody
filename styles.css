@@ -1,11 +1,14 @@
 body {
-    background-color: #121212;
     color: white;
     font-family: 'Noto', sans-serif;
 }
 
 .bg-homepage {
     background-image: url("img/Screenshot 2024-10-26 162643.png");
+}
+
+.bg-steps {
+    background-color: royalblue;
 }
 
 
