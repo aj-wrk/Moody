@@ -10,7 +10,6 @@ async function fetchUserProfile() {
     });
     const data = await response.json();
     document.getElementById('user-name').textContent = data.display_name;
-    document.getElementById('user-email').textContent = data.email;
 }
 
 fetchUserProfile();
