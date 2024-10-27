@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select Your Current Mood</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Your Current Mood</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="mood-selection">
+<header class="fixed-top">
+  <nav class="navbar pl-4 pr-5 pt-4">
+    <a class="navbar-brand" href="#">
+      <img src="img/Logos.png" height="50" width="270" alt="logo"/>
+    </a>
+    <a class="btn btn-light rounded-pill ms-2">
+      <img id="user-photo" alt="User Profile Photo" class="rounded-circle me-2" width="32" height="32">
+      <p id="user-name" class="font-weight-medium"></p>
+    </a>
+  </nav>
+</header>
 
-  <body class="mood-selection">
-    <header class="fixed-top">
-      <nav class="navbar pl-4 pr-5 pt-4">
-        <a class="navbar-brand" href="#">
-          <img src="img/Logos.png" height="50" width="270" alt="logo"/>
-        </a>
-        <a class="btn btn-light rounded-pill ms-2">
-          <img id="user-photo" alt="User Profile Photo" class="rounded-circle me-2" width="32" height="32">
-          <p id="user-name" class="font-weight-medium"></p>
-        </a>
-      </nav>
-    </header>
+<main class="m-5 d-flex flex-column justify-content-center vh-100">
+  <div class="row">
+    <div class="col-8">
+      <h3>Step 2</h3>
+      <h1 class="title-text">Mood</h1>
+      <a href="artists.html"><button class="btn btn-light mt-3 rounded-pill" id="confirm-button">Confirm</button></a>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="container text-center">
+      <div class="mood-grid" id="moodGrid">
+        <!-- The JavaScript will dynamically insert mood circles here -->
+      </div>
+    </div>
+  </div>
+</main>
 
-    <main>
-        <div class="container text-center">
-          <h2 class="my-4">What's your current mood?</h2>
-          <div class="mood-grid">
-            <!-- The JavaScript will dynamically insert mood circles here -->
-          </div>
-        </div>
-      </main>
-
-    <script src="app.js"></script>
-  </body>
-
+<script src="app.js"></script>
+</body>
 </html>
+
 
