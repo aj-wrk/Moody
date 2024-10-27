@@ -56,38 +56,38 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
+    font-size: 10px;
     text-align: center;
     color: black;
     cursor: pointer;
 }
 
 /* Colors for the red moods*/
-.mood-enraged { background-color: #FF5959; }
-.mood-panicked { background-color: #FF5959; }
-.mood-stressed { background-color: #FF5959; }
-.mood-jittery { background-color: #FF5959; }
-.mood-shocked { background-color: #FF5959; }
-.mood-livid { background-color: #FF5959; }
-.mood-furious { background-color: #FF5959; }
-.mood-frustrated { background-color: #FF5959; }
-.mood-tense { background-color: #FF5959; }
-.mood-stunned { background-color: #FF5959; }
-.mood-fuming { background-color: #FF5959; }
-.mood-frightened { background-color: #FF5959; }
-.mood-angry { background-color: #FF5959; }
+.mood-enraged { background-color: #AA2A39; }
+.mood-panicked { background-color: #DD4145; }
+.mood-stressed { background-color: #E14642; }
+.mood-jittery { background-color: #E74D41; }
+.mood-shocked { background-color: #EB543F; }
+.mood-livid { background-color: #AD2D40; }
+.mood-furious { background-color: #E0454B; }
+.mood-frustrated { background-color: #E44F4B; }
+.mood-tense { background-color: #E85648; }
+.mood-stunned { background-color: #EC5E46; }
+.mood-fuming { background-color: #B43250; }
+.mood-frightened { background-color: #E34C55; }
+.mood-angry { background-color: #E65454; }
 .mood-nervous { background-color: #FF5959; }
 .mood-restless { background-color: #FF5959; }
-.mood-anxious { background-color: #FF5959; }
+.mood-anxious { background-color: #B83657; }
 .mood-apprehensive { background-color: #FF5959; }
 .mood-worried { background-color: #FF5959; }
 .mood-irritated { background-color: #FF5959; }
 .mood-annoyed { background-color: #FF5959; }
-.mood-repulsed { background-color: #FF5959; }
-.mood-troubled { background-color: #FF5959; }
-.mood-concerned { background-color: #FF5959; }
-.mood-uneasy { background-color: #FF5959; }
-.mood-peeved { background-color: #FF5959; }
+.mood-repulsed { background-color: #B83657; }
+.mood-troubled { background-color: #EB5475; }
+.mood-concerned { background-color: #E45D6C; }
+.mood-uneasy { background-color: #EB7D69; }
+.mood-peeved { background-color: #F08C6A; }
 
 /* Example for yellow moods */
 .mood-surprised { background-color: #FFEB3B; }
