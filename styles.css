@@ -5,7 +5,7 @@ body {
 
 .bg-homepage {
     background-color: #121212;
-    background-image: url("img/Desktop - 12.png");
+    background-image: url("img/background.png");
     background-size: cover;
     background-position: center;
 }
