@@ -1,7 +1,5 @@
-// Get the access token from localStorage
 const accessToken = localStorage.getItem('accessToken');
 
-// Check if the access token is present
 if (!accessToken) {
     alert("No access token found. Please authenticate first.");
     window.location.href = "index.html";
@@ -48,7 +46,7 @@ const displayArtistResults = (artists) => {
 
     artists.forEach(artist => {
         const artistElement = document.createElement('div');
-        artistElement.classList.add('list-group-item', 'list-group-item-action', 'rounded-pill');
+        artistElement.classList.add('list-group-item', 'list-group-item-action');
         artistElement.textContent = artist.name;
         artistElement.dataset.artistId = artist.id;
 
