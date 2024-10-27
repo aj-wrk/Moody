@@ -30,10 +30,19 @@
                     <h1 class="title-text">The Artists</h1>
                     <a href="playlists.html"><button id="create-playlist-btn" class="btn btn btn-light mt-3 rounded-pill">Create Playlist</button></a>
                 </div>
-                <div class="col-6">
-                    <h3>Select Artists to Include</h3>
-                    <input type="text" id="artist-search" class="form-control rounded-pill" placeholder="Search artist...">
-                    <div id="artist-results" class="list-group mt-2"></div>
+
+                <div class="col-6 mt-5">
+                    <h1>Create Your Playlist</h1>
+
+                    <!-- Search Bar with Suggestions -->
+                    <div class="form-group position-relative">
+                        <input type="text" id="searchInput" class="form-control" placeholder="Search for artists..." oninput="handleSearchInput()">
+                        <div id="suggestions" class="suggestions list-group"></div>
+                    </div>
+
+                    <!-- Selected Artists as Badges -->
+                    <div id="selectedArtists" class="badge-container"></div>
+
                 </div>
             </div>
 
@@ -42,4 +51,6 @@
 
     <script src="script.js"></script>
     <script src="app.js"></script>
+
+
 </html>
