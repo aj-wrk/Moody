@@ -13,7 +13,9 @@
     <body class="text-light bg-artists">
         <header class="fixed-top">
             <nav class="navbar pl-4 pr-5 pt-4">
-                <a class="navbar-brand" href="#"><img src="img/Logos.png" height="50" width="270" alt="logo"/></a>
+                <a class="navbar-brand" href="#">
+                    <img src="img/Logos.png" height="50" width="270" alt="logo"/>
+                </a>
                 <a class="btn btn-light btn-lg rounded-pill">
                     <img id="user-photo" alt="User Profile Photo" class="rounded-circle mx-2 ml-2" width="40" height="40">
                     <p id="user-name" class="mb-0 font-weight-bold"></p>
@@ -23,17 +25,18 @@
 
         <main class="m-5 d-flex flex-column justify-content-center vh-100">
             <div class="row">
-                <div class="col-8">
+                <div class="col-6">
                     <h3>Step 3</h3>
                     <h1 class="title-text">Artists</h1>
+                    <a><button id="create-playlist-btn" class="btn btn btn-light mt-3 rounded-pill">Create Playlist</button></a>
+                </div>
+                <div class="col-6">
+                    <h3>Select Artists to Include</h3>
+                    <input type="text" id="artist-search" class="form-control" placeholder="Search artist...">
+                    <div id="artist-results" class="list-group mt-2"></div>
                 </div>
             </div>
 
-            <div>
-                <h3>Select Artists to Include</h3>
-                <input type="text" id="artist-search" class="form-control" placeholder="Search artist...">
-                <div id="artist-results" class="list-group mt-2"></div>
-            </div>
         </main>
     </body>
 
