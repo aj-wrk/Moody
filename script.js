@@ -9,24 +9,22 @@ async function fetchUserProfile() {
         headers: { 'Authorization': 'Bearer ' + accessToken }
     });
     const data = await response.json();
-
-    async function fetchUserProfile() {
-        const response = await fetch('https://api.spotify.com/v1/me', {
-            headers: { 'Authorization': 'Bearer ' + accessToken }
-        });
-        const data = await response.json();
-        document.getElementById('user-name').textContent = data.display_name;
-
-        // Check if there are images and set the profile photo
-        if (data.images && data.images.length > 0) {
-            document.getElementById('user-photo').src = data.images[0].url;
-        } else {
-            document.getElementById('user-photo').src = 'default-photo-url.jpg'; // fallback image if no profile photo exists
-        }
+    document.getElementById('user-name').textContent = data.display_name;
+    // Check if there are images and set the profile photo
+    if (data.images && data.images.length > 0) {
+        document.getElementById('user-photo').src = data.images[0].url;
+    } else {
+        document.getElementById('user-photo').src = 'default-photo-url.jpg'; // fallback image if no profile photo exists
     }
 }
 
 fetchUserProfile();
+
+
+
+
+
+
 
 const selectedArtists = new Set();
 
