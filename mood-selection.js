@@ -130,11 +130,11 @@ function selectMood(mood, moodCircle) {
     if (selectedMoods.includes(mood)) {
         // Mood is already selected, remove it
         selectedMoods = selectedMoods.filter(selectedMood => selectedMood !== mood);
-        moodCircle.classList.remove('selected'); // Remove selected class
+        moodCircle.classList.remove('selected');
     } else {
         // Mood is not selected, add it
         selectedMoods.push(mood);
-        moodCircle.classList.add('selected'); // Add selected class
+        moodCircle.classList.add('selected');
     }
 }
 
