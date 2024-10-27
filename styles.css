@@ -5,6 +5,8 @@ body {
 
 .bg-homepage {
     background-image: url("img/Screenshot 2024-10-26 162643.png");
+    background-size: cover;
+    background-position: center;
 }
 
 .bg-steps {
