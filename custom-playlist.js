@@ -1,13 +1,11 @@
-// Get the access token from localStorage
 const accessToken = localStorage.getItem('accessToken');
 const selectedArtists = JSON.parse(localStorage.getItem('selectedArtists')) || [];
-const selectedMoods = JSON.parse(localStorage.getItem('selectedMoods')) || []; // Updated to use 'selectedMoods'
-const audioPreferences = JSON.parse(localStorage.getItem('audioPreferences')) || {}; // Updated to use 'audioPreferences'
+const selectedMoods = JSON.parse(localStorage.getItem('selectedMoods')) || [];
+const audioPreferences = JSON.parse(localStorage.getItem('audioPreferences')) || {};
 
-// Check if the access token is present
 if (!accessToken) {
     alert("No access token found. Please authenticate first.");
-    window.location.href = "index.html"; // Redirect if no token
+    window.location.href = "index.html";
 }
 
 // Function to fetch tracks based on moods and selected artists
@@ -28,7 +26,7 @@ async function fetchTracksBasedOnMoodsAndArtists() {
 
             if (artistId) {
                 // Fetch related tracks based on artist ID
-                const trackResponse = await fetch(`https://api.spotify.com/v1/artists/${artistId}/top-tracks?market=US`, {
+                const trackResponse = await fetch(`https://api.spotify.com/v1/artists/${artistId}`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${accessToken}`
@@ -56,7 +54,7 @@ async function fetchTracksBasedOnMoodsAndArtists() {
     return tracks;
 }
 
-// Function to create the Spotify playlist
+// Function to create playlist
 async function createSpotifyPlaylist(tracks) {
     const playlistName = `Custom Playlist - Moods: ${selectedMoods.join(', ')}`;
     const url = 'https://api.spotify.com/v1/me/playlists';
@@ -83,7 +81,7 @@ async function createSpotifyPlaylist(tracks) {
     const createdPlaylist = await response.json();
     const trackURIs = tracks.map(track => `spotify:track:${track.id}`);
 
-    // Add tracks to the newly created playlist
+    // Add tracks
     const addTracksUrl = `https://api.spotify.com/v1/playlists/${createdPlaylist.id}/tracks`;
     await fetch(addTracksUrl, {
         method: 'POST',
