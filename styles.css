@@ -13,6 +13,14 @@ body {
     background-color: #5673E9;
 }
 
+.bg-artists {
+    background-color: orange;
+}
+
+.bg-mood {
+    background-color: #121212;
+}
+
 .custom-gutter-row {
     --bs-gutter-x: 1.5rem; /* Horizontal gutter */
     --bs-gutter-y: 1.5rem; /* Vertical gutter */
