@@ -32,25 +32,16 @@
                 </div>
 
                 <div class="col-6 mt-5">
-                    <h1>Create Your Playlist</h1>
-
-                    <!-- Search Bar with Suggestions -->
-                    <div class="form-group position-relative">
-                        <input type="text" id="searchInput" class="form-control" placeholder="Search for artists..." oninput="handleSearchInput()">
-                        <div id="suggestions" class="suggestions list-group"></div>
-                    </div>
-
-                    <!-- Selected Artists as Badges -->
-                    <div id="selectedArtists" class="badge-container"></div>
-
+                    <h3>Select Artists to Include</h3>
+                    <input type="text" id="artist-search" class="form-control" placeholder="Search artist...">
+                    <div id="artist-results" class="list-group mt-2 rounded-pill"></div>
+                    <div id="selected-artists" class="mt-3"></div> <!--artist badges -->
                 </div>
             </div>
 
         </main>
     </body>
 
-    <script src="mood-selection.js"></script>
-    <script src="app.js"></script>
-
+    <script src="artist-selection.js"></script>
 
 </html>
