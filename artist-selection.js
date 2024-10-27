@@ -1,6 +1,9 @@
+// Get the access token from localStorage
 const accessToken = localStorage.getItem('accessToken');
 
+// Check if the access token is present
 if (!accessToken) {
+    // Redirect to the authentication page or handle missing token appropriately
     alert("No access token found. Please authenticate first.");
     window.location.href = "index.html";
 }
@@ -118,3 +121,8 @@ artistSearchInput.addEventListener('input', () => {
     }
 });
 
+// Button event to move to the playlist generation page
+document.getElementById('create-playlist-btn').addEventListener('click', () => {
+    // Redirect to playlist.html page
+    window.location.href = 'playlists.html';
+});
