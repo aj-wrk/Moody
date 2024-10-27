@@ -59,17 +59,6 @@ document.getElementById('login-btn').addEventListener('click', () => {
     window.location.href = loginUrl;
 });
 
-// After login, extract the access token from the URL
-function getTokenFromUrl() {
-    const hash = window.location.hash;
-    if (hash) {
-        const token = hash.substring(1).split('&').find(elem => elem.startsWith('access_token')).split('=')[1];
-        localStorage.setItem('spotifyAccessToken', token);
-        window.location.hash = '';  // Clear the hash from the URL
-    }
-}
-
-getTokenFromUrl();
 
 // Handle playlist creation based on mood or randomization
 document.getElementById('randomize-btn').addEventListener('click', async () => {
