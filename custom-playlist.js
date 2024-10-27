@@ -1,11 +1,13 @@
+// Get the access token from localStorage
 const accessToken = localStorage.getItem('accessToken');
 const selectedArtists = JSON.parse(localStorage.getItem('selectedArtists')) || [];
-const selectedMoods = JSON.parse(localStorage.getItem('selectedMoods')) || [];
-const audioPreferences = JSON.parse(localStorage.getItem('audioPreferences')) || {};
+const selectedMoods = JSON.parse(localStorage.getItem('selectedMoods')) || []; // Updated to use 'selectedMoods'
+const audioPreferences = JSON.parse(localStorage.getItem('audioPreferences')) || {}; // Updated to use 'audioPreferences'
 
+// Check if the access token is present
 if (!accessToken) {
     alert("No access token found. Please authenticate first.");
-    window.location.href = "index.html";
+    window.location.href = "index.html"; // Redirect if no token
 }
 
 // Function to fetch tracks based on moods and selected artists
@@ -26,7 +28,7 @@ async function fetchTracksBasedOnMoodsAndArtists() {
 
             if (artistId) {
                 // Fetch related tracks based on artist ID
-                const trackResponse = await fetch(`https://api.spotify.com/v1/artists/${artistId}`, {
+                const trackResponse = await fetch(`https://api.spotify.com/v1/artists/${artistId}/top-tracks?market=US`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${accessToken}`
@@ -54,7 +56,7 @@ async function fetchTracksBasedOnMoodsAndArtists() {
     return tracks;
 }
 
-// Function to create playlist
+// Function to create the Spotify playlist
 async function createSpotifyPlaylist(tracks) {
     const playlistName = `Custom Playlist - Moods: ${selectedMoods.join(', ')}`;
     const url = 'https://api.spotify.com/v1/me/playlists';
@@ -62,7 +64,7 @@ async function createSpotifyPlaylist(tracks) {
     const playlistData = {
         name: playlistName,
         description: 'A playlist created based on your selected moods and artists.',
-        public: true
+        public: false // Set to true if you want it to be public
     };
 
     const response = await fetch(url, {
@@ -81,7 +83,7 @@ async function createSpotifyPlaylist(tracks) {
     const createdPlaylist = await response.json();
     const trackURIs = tracks.map(track => `spotify:track:${track.id}`);
 
-    // Add tracks
+    // Add tracks to the newly created playlist
     const addTracksUrl = `https://api.spotify.com/v1/playlists/${createdPlaylist.id}/tracks`;
     await fetch(addTracksUrl, {
         method: 'POST',
@@ -112,7 +114,7 @@ document.getElementById('create-playlist-btn').addEventListener('click', async (
 
         // Optionally redirect to another page or show the playlist
         setTimeout(() => {
-            window.location.href = 'playlist.html';
+            window.location.href = 'playlist.html'; // Redirect after successful creation
         }, 2000);
     } catch (error) {
         document.getElementById('playlist-message').textContent = 'Error creating playlist: ' + error.message;
