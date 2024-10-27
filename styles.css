@@ -11,9 +11,20 @@ body {
     background-color: #5673E9;
 }
 
+.custom-gutter-row {
+    --bs-gutter-x: 1.5rem; /* Horizontal gutter */
+    --bs-gutter-y: 1.5rem; /* Vertical gutter */
+}
 
 .moody-text {
     font-size: 8rem; /* Adjust size as per your preference */
+    font-weight: 700; /* Makes it bold */
+    line-height: 1.2; /* Adjust line spacing if needed */
+    display: block; /* Ensure it's displayed as a block to manage spacing */
+}
+
+.title-text {
+    font-size: 5rem; /* Adjust size as per your preference */
     font-weight: 700; /* Makes it bold */
     line-height: 1.2; /* Adjust line spacing if needed */
     display: block; /* Ensure it's displayed as a block to manage spacing */
