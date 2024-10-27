@@ -62,6 +62,16 @@ body {
     cursor: pointer;
 }
 
+.mood-circle {
+    /* Other existing styles */
+    border: 2px solid transparent; /* Default border */
+    transition: border 0.3s ease; /* Smooth transition for border change */
+}
+
+.mood-circle.selected {
+    border: 2px solid white; /* White border for selected mood */
+}
+
 /* Colors for the red moods*/
 .mood-enraged { background-color: #AA2A39; }
 .mood-panicked { background-color: #DD4145; }
