@@ -19,3 +19,44 @@ async function fetchUserProfile() {
 }
 
 fetchUserProfile();
+
+
+
+// Fetch artists from Spotify API based on search
+document.getElementById('artist-search').oninput = async function() {
+    const query = this.value;
+    if (query.length < 3) return;
+
+    const response = await fetch(`https://api.spotify.com/v1/search?q=${query}&type=artist&limit=5`, {
+        headers: { 'Authorization': 'Bearer ' + accessToken }
+    });
+    const data = await response.json();
+    const artistResults = document.getElementById('artist-results');
+    artistResults.innerHTML = '';
+
+    data.artists.items.forEach(artist => {
+        const artistItem = document.createElement('button');
+        artistItem.className = 'list-group-item list-group-item-action';
+        artistItem.textContent = artist.name;
+        artistItem.onclick = () => artistItem.classList.toggle('active');
+        artistResults.appendChild(artistItem);
+    });
+};
+
+
+
+// Fetch frame to present playlist
+const playlistId = '6Hk5syG8LA8nebwZAU6mbQ';
+
+<iframe
+    title="Spotify Embed: Recommendation Playlist "
+    src={`https://open.spotify.com/embed/playlist/6Hk5syG8LA8nebwZAU6mbQ?utm_source=generator&theme=0`}
+    width="100%"
+    height="100%"
+    style={{ minHeight: '360px' }}
+    frameBorder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy"
+/>
+
+
