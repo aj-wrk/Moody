@@ -4,7 +4,8 @@ body {
 }
 
 .bg-homepage {
-    background-image: url("img/Screenshot 2024-10-26 162643.png");
+    background-color: #121212;
+    background-image: url("img/Desktop - 12.png");
     background-size: cover;
     background-position: center;
 }
@@ -17,7 +18,7 @@ body {
     background-color: orange;
 }
 
-.bg-mood {
+.bg-moods {
     background-color: #121212;
 }
 
