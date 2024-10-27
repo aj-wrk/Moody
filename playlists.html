@@ -28,17 +28,36 @@
         <div class="col-6">
             <h3>Step 4</h3>
             <h1 class="title-text">The Playlist</h1>
-            <a href="#"><button id="" class="btn btn btn-light mt-3 rounded-pill">Share</button></a>
-            <a href="#"><button id="" class="btn btn btn-light mt-3 rounded-pill">Try Again</button></a>
+            <a href="mood-selection.html"><button id="" class="btn btn btn-light mt-3 rounded-pill">Try Again</button></a>
         </div>
         <div class="col-6">
-
+            <div id="playlist-container" class="mt-4">
+                <!-- The iframe will be injected here -->
+            </div>
         </div>
     </div>
-
 </main>
-</body>
 
-<script src="mood-selection.js"></script>
-<script src="app.js"></script>
+<script>
+    const playlistId = localStorage.getItem('playlistId');
+
+    if (playlistId) {
+        // Construct the Spotify playlist URL
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://open.spotify.com/embed/playlist/${playlistId}`;
+        iframe.width = "300"; // You can adjust the width
+        iframe.height = "380"; // You can adjust the height
+        iframe.frameBorder = "0";
+        iframe.allowTransparency = "true";
+        iframe.allow = "encrypted-media";
+        iframe.classList.add("rounded"); // Optional: Add Bootstrap classes for styling
+
+        document.getElementById('playlist-container').appendChild(iframe);
+    } else {
+        console.log("No playlist ID found in local storage.");
+    }
+</script>
+
+</body>
 </html>
+
