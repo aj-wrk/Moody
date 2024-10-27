@@ -1,13 +1,11 @@
-// Get the access token from localStorage
 const accessToken = localStorage.getItem('accessToken');
 
-// Check if the access token is present
 if (!accessToken) {
     alert("No access token found. Please authenticate first.");
     window.location.href = "index.html";
 }
 
-// Moods and their respective class names (for color matching)
+
 const moods = [
     'Enraged', 'Panicked', 'Stressed', 'Jittery', 'Shocked', 'Surprised',
     'Upbeat', 'Festive', 'Exhilarated', 'Ecstatic', 'Livid', 'Furious',
@@ -28,7 +26,7 @@ const moods = [
 ];
 
 
-// Mapping moods to audio feature preferences
+// Mapping moods to audio feature preferences to fetch info from Spotify
 const moodToAudioFeatures = {
     'Enraged': {energy: 0.95, tempo: 160, danceability: 0.5},
     'Panicked': {energy: 0.9, tempo: 155, danceability: 0.6},
@@ -106,10 +104,11 @@ const moodToAudioFeatures = {
     'Disheartened': {energy: 0.3, tempo: 65, danceability: 0.1},
 }
 
-// Array to hold selected moods
+// Array - selected moods
 let selectedMoods = [];
 
-// Function to generate mood selection circles
+
+// Mood selection
 function generateMoodCircles() {
     const moodGrid = document.querySelector('.mood-grid');
 
@@ -118,7 +117,6 @@ function generateMoodCircles() {
         moodCircle.className = `mood-circle mood-${mood.toLowerCase()}`;
         moodCircle.textContent = mood;
 
-        // Event listener for mood selection
         moodCircle.addEventListener('click', () => selectMood(mood, moodCircle));
 
         moodGrid.appendChild(moodCircle);
@@ -128,55 +126,25 @@ function generateMoodCircles() {
 // Function to select/deselect a mood
 function selectMood(mood, moodCircle) {
     if (selectedMoods.includes(mood)) {
-        // Mood is already selected, remove it
         selectedMoods = selectedMoods.filter(selectedMood => selectedMood !== mood);
         moodCircle.classList.remove('selected');
     } else {
-        // Mood is not selected, add it
         selectedMoods.push(mood);
         moodCircle.classList.add('selected');
     }
 }
 
-// Function to aggregate audio feature preferences based on selected moods
-function getAggregatedAudioFeatures() {
-    let featureTotals = { energy: 0, tempo: 0, danceability: 0 };
-    let count = 0;
 
-    selectedMoods.forEach(mood => {
-        const features = moodToAudioFeatures[mood];
-        if (features) {
-            featureTotals.energy += features.energy;
-            featureTotals.tempo += features.tempo;
-            featureTotals.danceability += features.danceability;
-            count++;
-        }
-    });
 
-    // Average out features if any moods were selected
-    return count > 0
-        ? {
-            energy: featureTotals.energy / count,
-            tempo: featureTotals.tempo / count,
-            danceability: featureTotals.danceability / count
-        }
-        : null;
-}
-
-// Event listener for confirm button
+// Confirm choices and save in localStorage + navigate to the artist selection page
 document.getElementById('confirm-button').addEventListener('click', () => {
-    // Save selected moods in localStorage
     localStorage.setItem('selectedMoods', JSON.stringify(selectedMoods));
+    localStorage.setItem('audioPreferences', JSON.stringify(audioPreferences));
 
-    // Get the aggregated audio features
-    const audioPreferences = getAggregatedAudioFeatures();
-    if (audioPreferences) {
-        localStorage.setItem('audioPreferences', JSON.stringify(audioPreferences));
-    }
-
-    // Redirect to the artist selection page
     window.location.href = 'artists.html';
 });
+
+
 
 // Run function on page load
 window.onload = function() {
