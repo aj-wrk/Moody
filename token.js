@@ -1,11 +1,11 @@
-// Get the access token from the URL if present
-let accessToken = window.location.hash.split('&')[0].split('=')[1];
+// Retrieve the access token from the URL hash if present
+let accessToken = window.location.hash ? window.location.hash.split('&')[0].split('=')[1] : null;
 
-// If there is no access token in the URL, try retrieving it from localStorage
+// Check for token in localStorage if it wasn't found in the URL
 if (!accessToken) {
     accessToken = localStorage.getItem('spotifyAccessToken');
 } else {
-    // If there is a token, store it in localStorage for future use
+    // Store the access token in localStorage for future use if it came from the URL
     localStorage.setItem('spotifyAccessToken', accessToken);
 }
 
@@ -14,20 +14,31 @@ if (!accessToken) {
     window.location.href = 'index.html';
 }
 
-// Fetch user profile with stored token
+// Function to fetch user profile data from Spotify
 async function fetchUserProfile() {
-    const response = await fetch('https://api.spotify.com/v1/me', {
-        headers: { 'Authorization': 'Bearer ' + accessToken }
-    });
-    const data = await response.json();
+    try {
+        const response = await fetch('https://api.spotify.com/v1/me', {
+            headers: { 'Authorization': `Bearer ${accessToken}` }
+        });
 
-    // Update user name and profile photo if available
-    document.getElementById('user-name').textContent = data.display_name;
-    if (data.images && data.images.length > 0) {
-        document.getElementById('user-photo').src = data.images[0].url;
-    } else {
-        document.getElementById('user-photo').src = 'default-photo-url.jpg';
+        if (response.ok) {
+            const data = await response.json();
+
+            // Update the UI with user's profile data
+            document.getElementById('user-name').textContent = data.display_name || 'User';
+            document.getElementById('user-photo').src = data.images?.[0]?.url || 'default-photo-url.jpg';
+        } else if (response.status === 401) {
+            // If token is invalid, clear it from storage and redirect to login
+            localStorage.removeItem('spotifyAccessToken');
+            window.location.href = 'index.html';
+        } else {
+            console.error('Failed to fetch user profile:', response.status);
+        }
+    } catch (error) {
+        console.error('Error fetching user profile:', error);
     }
 }
 
+// Fetch user profile information if access token is available
 fetchUserProfile();
+
