@@ -60,12 +60,7 @@ body {
     text-align: center;
     color: black;
     cursor: pointer;
-}
-
-.mood-circle {
-    /* Other existing styles */
-    border: 2px solid transparent; /* Default border */
-    transition: border 0.3s ease; /* Smooth transition for border change */
+    border: 2px solid transparent;
 }
 
 .mood-circle.selected {
