@@ -1,3 +1,4 @@
+// Retrieve the access token from localStorage
 const accessToken = localStorage.getItem('accessToken');
 
 if (!accessToken) {
@@ -5,7 +6,7 @@ if (!accessToken) {
     window.location.href = "index.html";
 }
 
-
+// Define moods and audio feature mappings
 const moods = [
     'Enraged', 'Panicked', 'Stressed', 'Jittery', 'Shocked', 'Surprised',
     'Upbeat', 'Festive', 'Exhilarated', 'Ecstatic', 'Livid', 'Furious',
@@ -104,11 +105,10 @@ const moodToAudioFeatures = {
     'Disheartened': {energy: 0.3, tempo: 65, danceability: 0.1},
 }
 
-// Array - selected moods
+// Array to store selected moods
 let selectedMoods = [];
 
-
-// Mood selection
+// Function to create and display mood circles
 function generateMoodCircles() {
     const moodGrid = document.querySelector('.mood-grid');
 
@@ -123,7 +123,7 @@ function generateMoodCircles() {
     });
 }
 
-// Function to select/deselect a mood
+// Function to toggle mood selection
 function selectMood(mood, moodCircle) {
     if (selectedMoods.includes(mood)) {
         selectedMoods = selectedMoods.filter(selectedMood => selectedMood !== mood);
@@ -134,21 +134,21 @@ function selectMood(mood, moodCircle) {
     }
 }
 
-
-
-// Confirm choices and save in localStorage + navigate to the artist selection page
+// Confirm and save selected moods and preferences, then navigate to artist selection
 document.getElementById('confirm-button').addEventListener('click', () => {
+    // Map selected moods to audio features
+    const audioPreferences = selectedMoods.map(mood => moodToAudioFeatures[mood]).filter(Boolean);
+
+    // Store selected moods and preferences in localStorage
     localStorage.setItem('selectedMoods', JSON.stringify(selectedMoods));
     localStorage.setItem('audioPreferences', JSON.stringify(audioPreferences));
 
     window.location.href = 'artists.html';
 });
 
-
-
-// Run function on page load
-window.onload = function() {
+// Generate mood circles when page content is loaded
+document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.mood-grid')) {
         generateMoodCircles();
     }
-};
+});
