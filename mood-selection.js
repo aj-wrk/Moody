@@ -114,7 +114,7 @@ function generateMoodCircles() {
 
     moods.forEach(mood => {
         const moodCircle = document.createElement('div');
-        moodCircle.className = `mood-circle mood-${mood.toLowerCase()}`;
+        moodCircle.className = `mood-circle`;
         moodCircle.textContent = mood;
 
         moodCircle.addEventListener('click', () => selectMood(mood, moodCircle));
