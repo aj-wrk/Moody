@@ -114,12 +114,12 @@ function generateMoodCircles() {
 
     moods.forEach(mood => {
         const moodCircle = document.createElement('div');
-        moodCircle.class = `mood-circle`;
+        moodCircle.className = `mood-circle mood-${mood.toLowerCase()}`;
         moodCircle.textContent = mood;
-
+        console.log(moodCircle)
         moodCircle.addEventListener('click', () => selectMood(mood, moodCircle));
 
-        moodGrid.appendChild(moodCircle);
+       moodGrid.appendChild(moodCircle);
     });
 }
 
@@ -146,9 +146,12 @@ document.getElementById('confirm-button').addEventListener('click', () => {
     window.location.href = 'artists.html';
 });
 
+console.log('fora')
+
 // Generate mood circles when page content is loaded
 document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.mood-grid')) {
-        generateMoodCircles();
+         generateMoodCircles();
+        console.log('dentro')
     }
 });
